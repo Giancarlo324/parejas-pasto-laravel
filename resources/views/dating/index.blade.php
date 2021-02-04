@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
 <div class="row">
-    Vista de bienvenida
+    Vista para encontrar parejas
 </div>
 @stop

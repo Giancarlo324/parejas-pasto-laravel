@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -13,16 +14,17 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
+    public function getIndex()
     {
-        return view('home');
+        return view('welcome');
+    }
+
+    public function getHome(){
+        // return redirect()->action([DatingController::class, 'getIndex']);
+        // if(!Auth::check()) return redirect('/login');
+        return redirect()->action([HomeController::class, 'getIndex']);
     }
 }

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DatingController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', [HomeController::class, 'getIndex']);
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dating', [DatingController::class, 'getIndex']);
+    Route::get('match', [DatingController::class, 'getMatch']);
+    Route::get('match/{id}', [DatingController::class, 'getMatchInfo']);
+    Route::get('likeme', [DatingController::class, 'getLikeMe']);
+    Route::get('likeme/{id}', [DatingController::class, 'getLikeMeInfo']);
+    Route::get('profile', [ProfileController::class, 'profile']);
 });
 
 Auth::routes();
