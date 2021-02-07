@@ -36,14 +36,14 @@
         @elseif( !Auth::check() )
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('/login')}}">
+                    <li class="nav-item" style="margin: 0.75em 0 0.75em 0;">
+                        <a class="icon solid fa-sign-in-alt" href="{{url('/login')}}">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
                             Iniciar Sesión
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/register')}}">
+                        <a class="icon solid fa-user-plus" href="{{url('/register')}}">
                             <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
                             Registrarse
                         </a>
