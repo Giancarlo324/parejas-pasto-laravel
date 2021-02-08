@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
-class MeGustaTableSeeder extends Seeder
+class MeGustasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class MeGustaTableSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call(MeGustaTableSeeder::class);
+        $this->call(MeGustasTableSeeder::class);
         Model::reguard();
     }
 }

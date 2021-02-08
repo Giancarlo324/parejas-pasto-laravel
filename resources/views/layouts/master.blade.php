@@ -8,7 +8,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ url('/assets/bootstrap/css/bootstrap.min.css') }}" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}" />
   <title>Parejas Pasto</title>
 </head>
 
@@ -36,12 +36,12 @@
   
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.dropotron.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="{{ url('/assets/js/jquery.min.js') }}"></script>
+  <script src="{{ url('/assets/js/jquery.dropotron.min.js') }}"></script>
+  <script src="{{ url('/assets/js/browser.min.js') }}"></script>
+  <script src="{{ url('/assets/js/breakpoints.min.js') }}"></script>
+  <script src="{{ url('/assets/js/util.js') }}"></script>
+  <script src="{{ url('/assets/js/main.js') }}"></script>
 </body>
 
 <!-- Footer -->

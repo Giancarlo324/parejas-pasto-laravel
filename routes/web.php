@@ -21,12 +21,14 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [HomeController::class, 'getIndex']);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('dating', [DatingController::class, 'getIndex']);
+    Route::any('dating', [DatingController::class, 'getIndex']);
+    //Route::any('dating', [DatingController::class, 'postLike'])->name('postLike');
+    //Route::any('dating', [DatingController::class, 'postDislike'])->name('postDislike');
     Route::get('match', [DatingController::class, 'getMatch']);
     Route::get('match/{id}', [DatingController::class, 'getMatchInfo']);
     Route::get('likeme', [DatingController::class, 'getLikeMe']);
     Route::get('likeme/{id}', [DatingController::class, 'getLikeMeInfo']);
-    Route::get('profile', [ProfileController::class, 'profile']);
+    Route::put('profile/{id}', [ProfileController::class, 'getIndex']);
 });
 
 Auth::routes();

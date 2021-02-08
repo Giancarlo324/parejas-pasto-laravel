@@ -1,55 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Header -->
+<section id="header">
     <div class="container">
-        <a class="navbar-brand" href="/" style="color:#777"><span style="font-size:15pt">&#9820;</span> Parejas Pasto</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Logo -->
+        <h1 id="logo"><a href="/">Encuentra Pareja Pasto</a></h1>
+        <p>Si estás solo, si estás de visita, ten un encuentro casual y disfruta del momento...</p>
 
-        @if( Auth::check() )
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item {{ Request::is('catalog') && ! Request::is('catalog/create')? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/catalog')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Encontrar pareja
-                        </a>
-                    </li>
-                    <li class="nav-item {{  Request::is('catalog/create') ? 'active' : ''}}">
-                        <a class="nav-link" href="{{url('/catalog/create')}}">
-                            <span>&#10010</span> Matches
-                        </a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <form action="{{ url('/logout') }}" method="POST" style="display:inline">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">
-                                Cerrar sesión
-                            </button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        @elseif( !Auth::check() )
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item" style="margin: 0.75em 0 0.75em 0;">
-                        <a class="icon solid fa-sign-in-alt" href="{{url('/login')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Iniciar Sesión
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="icon solid fa-user-plus" href="{{url('/register')}}">
-                            <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                            Registrarse
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        @endif
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                @if( Auth::check() )
+                <li><a class="icon solid fa-heart" href="{{ url('/dating') }}"><span>Encontrar pareja</span></a></li>
+                <li><a class="icon solid fa-grin-hearts" href="quien_me_gusta.php"><span>Mis gustos</span></a></li>
+                <li><a class="icon solid fa-fire" href="a_quien_le_gusto.php"><span>A quien le gusto</span></a></li>
+                <li><a class="icon solid fa-database" href="{{ url('/profile/' . Auth::user()->id ) }}"><span>Actualizar datos</span></a></li>
+                <li><form action="{{ url('/logout') }}" method="POST" style="display:inline">
+                    {{ csrf_field() }}
+                    <button type="submit" class="icon solid fa-sign-out-alt" style="display:inline;cursor:pointer">
+                        Cerrar sesión
+                    </button>
+                </form></li>
+                @elseif( !Auth::check() )
+                <li><a class="icon solid fa-sign-in-alt" href="{{url('/login')}}"><span>Iniciar Sesión</span></a></li>
+                <li><a class="icon solid fa-user-plus" href="{{url('/register')}}"><span>Registrarse</span></a></li>
+                @endif
+            </ul>
+        </nav>
     </div>
-</nav>
+</section>

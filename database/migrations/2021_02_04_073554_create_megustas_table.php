@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMegustaTable extends Migration
+class CreateMegustasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateMegustaTable extends Migration
      */
     public function up()
     {
-        Schema::create('megusta', function (Blueprint $table) {
-            $table->bigIncrements('idUsuario')->unsigned();
+        Schema::create('megustas', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('idUsuario')->unsigned();
             $table->foreign('idUsuario')->references('id')->on('users');
             $table->bigInteger('idUsuarioMeGusta')->nullable();
+            $table->bigInteger('idUsuarioNoGusta')->nullable();
             $table->bigInteger ('idUsuarioLeGusto')->nullable();
             $table->timestamps();
         });
@@ -29,6 +31,6 @@ class CreateMegustaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('megusta');
+        Schema::dropIfExists('megustas');
     }
 }
