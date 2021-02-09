@@ -15,7 +15,7 @@
          <div class="container">
             <div class="row">
                <article class="box post">
-                  <img src="images/pasos.png" class="responsive" />
+                  <img src="{{ url('assets/images/pasos.png') }}" class="responsive" />
                </article>
 
                <!-- Content -->
@@ -27,7 +27,7 @@
                         <h2><strong>¿</strong>Cómo funciona la búsqueda de pareja<strong>?</strong><br />
                         </h2>
                      </header>
-                     <img src="images/pic05.jpg" alt="" class="responsive" />
+                     <img src="{{ url('assets/images/pic05.jpg') }}" alt="" class="responsive" />
                      <h3>¡Cuenta quién eres!</h3>
                      <p>Habla sobre ti. actua con naturalidad, sinceridad y espontaneidad.
                         Unas cuantas líneas son suficientes para causar una buena impresión.
@@ -39,7 +39,7 @@
                   <!-- Post -->
                   <article class="box post">
                      <header>
-                        <img src="images/pic052.jpg" alt="" class="responsive" />
+                        <img src="{{ url('assets/images/pic052.jpg') }}" alt="" class="responsive" />
                         <h2>Encuentra a la persona que estás <strong>buscando</strong></h2>
                      </header>
                      <h3>Conoce como son las personas</h3>
@@ -53,7 +53,7 @@
                   <!-- Post -->
                   <article class="box post">
                      <header>
-                        <img src="images/pic053.jpg" alt="" class="responsive" />
+                        <img src="{{ url('assets/images/pic053.jpg') }}" alt="" class="responsive" />
                         <h2><strong>Contacta</strong></h2>
                      </header>
                      <h3>¿No sabes cómo empezar una conversación?</h3>

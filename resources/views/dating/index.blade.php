@@ -83,7 +83,7 @@
             </header>
             <div class="row aln-center">
                 ¡Comparte este sitio web con tus amigos y descubre gente nueva!
-                <img src="images/buscarpareja.jpg" class="responsive" />
+                <img src="{{ url('assets/images/buscarpareja.jpg') }}" class="responsive" />
             </div>
         </div>
     </section>

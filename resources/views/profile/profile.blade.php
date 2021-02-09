@@ -1,82 +1,80 @@
 @extends('layouts.master')
 @section('content')
 
-
+@php
+if( Auth::user()->id === $usuario->id ){
+@endphp
 <div class="container">
     <div class="row">
         <div class="card-body">
             <header>
                 <h2>Actualizar mi perfil</h2>
             </header>
-            <form id="formularioModificarPerfil" method="post" enctype="multipart/form-data" action="modificarPerfil.php">
+            <form id="formularioModificarPerfil" method="post" enctype="multipart/form-data" action="">
+                {{method_field('PUT')}}
+                {{ csrf_field() }}
                 <div>
                     <label>Nombre</label>
-                    <input type="text" placeholder="Escribe tu nombre" name="Nombre" value="{{ $usuario->nombre_apellido }}" >
-                    <p>
-                        <label>Escoge tus tres mejores fotografías (tamaño recomendado: 410px alto * 380px ancho y peso max:9mb)</label>
-                        <input type="file" name="foto1" id="foto1" accept="image/*" />
-                        <?php echo "<img src='https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg'" ?>
-                    </p>
-                    <p>
-                        <input type="file" name="foto2" id="foto2" accept="image/*" />
-                        <?php echo "<img src='https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg'" ?>
-                    </p>
-                    <p>
-                        <input type="file" name="foto3" id="foto3" accept="image/*" />
-                        <?php echo "<img src='https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg'" ?>
-                    </p>
+                    <input type="text" placeholder="Escribe tu nombre" name="nombre_apellido" value="{{ $usuario->nombre_apellido }}" require>
 
                     <p>
                         <label>Sexo</label>
 
                         <label class="miradio">Hombre
-                            <input type="radio" name="Sexo" value="M" {{ ($usuario->sexo) == 'M' ? 'checked' : '' }}>
+                            <input type="radio" name="sexo" value="M" {{ ($usuario->sexo) == 'M' ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
                         <label class="miradio">Mujer
-                            <input type="radio" name="Sexo" value="F" {{ ($usuario->sexo) == 'M' ? 'checked' : '' }}>
+                            <input type="radio" name="sexo" value="F" {{ ($usuario->sexo) == 'F' ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
 
                     </p>
                     <label>Nivel de estudios acadmémicos</label>
-                    <textarea type="text" placeholder="Escribe que estudias actualmente" name="Escuela" >{{ $usuario->estudios }}</textarea>
+                    <textarea type="text" placeholder="Escribe que estudias actualmente" name="estudios" require>{{ $usuario->estudios }}</textarea>
 
                     <label>Sobre ti</label>
-                    <textarea type="text" placeholder="Describe cuales son tus gustos, que buscas, qué haces..." name="Sobre_ti" >{{ $usuario->sobre_mi }}</textarea>
+                    <textarea type="text" placeholder="Describe cuales son tus gustos, que buscas, qué haces..." name="sobre_mi" require>{{ $usuario->sobre_mi }}</textarea>
                     <label>Celular</label>
-                    <input type="tel" maxlength="10" placeholder="Num. Celular" name="Celular" value="{{ $usuario->celular }}">
+                    <input type="tel" maxlength="10" placeholder="Num. Celular" name="celular" value="{{ $usuario->celular }}" require>
                     <p>
                         <label>Me interesa</label>
 
                         <label class="miradio">Hombres
-                            <input type="radio" name="Interes" value="M" {{ ($usuario->me_interesa) == 'M' ? 'checked' : '' }} >
+                            <input type="radio" name="me_interesa" value="M" {{ ($usuario->me_interesa) == 'M' ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
                         <label class="miradio">Mujeres
-                            <input type="radio" name="Interes" value="F" {{ ($usuario->me_interesa) == 'F' ? 'checked' : '' }}>
+                            <input type="radio" name="me_interesa" value="F" {{ ($usuario->me_interesa) == 'F' ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
                         <label class="miradio">Hombres y mujeres
-                            <input type="radio" name="Interes" value="T" {{ ($usuario->me_interesa) == 'T' ? 'checked' : '' }}>
+                            <input type="radio" name="me_interesa" value="T" {{ ($usuario->me_interesa) == 'T' ? 'checked' : '' }}>
                             <span class="checkmark"></span>
                         </label>
                     </p>
-                    <label>Contraseña nueva</label>
-                    <input type="password" placeholder="Escribe tu nueva contraseña" name="password_1">
-                    <label>Confirmar contraseña nueva</label>
-                    <input type="password" placeholder="Confirma tu nueva contraseña" name="password_2">
-                    <label>Ingresa tu actual contraseña para realizar tus cambios</label>
-                    <input type="password" placeholder="Escribe tu contraseña actual" name="password_actual">
+                    <label>Email(Solo lectura)</label>
+                    <input type="email" name="email" value="{{ $usuario->email }}" readonly>
+                    
                 </div>
                 <br>
                 <p>
-                    <input type="submit" id="submitModificarPerfil" name="editar" value="Actualizar" />
+                    <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
+                        Editar
+                    </button>
                 </p>
             </form>
         </div>
     </div>
 </div>
+@php
+}else{
+@endphp
+<div class=''>No tienes permiso para ver esta pagina!</div>
+@include('partials.footer')
+@php
+}
+@endphp
 
 
 @stop

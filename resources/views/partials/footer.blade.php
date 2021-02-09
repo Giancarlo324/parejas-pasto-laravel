@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-6 col-12-medium">
                 <section>
-                    <img class="responsive" src="images/footer.png" />
+                    <img class="responsive" src="{{ url('assets/images/footer.png') }} " />
                 </section>
             </div>
             <div class="col-6 col-12-medium">
