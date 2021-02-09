@@ -58,45 +58,32 @@ class DatingController extends Controller
         }
     }
 
-    public function getShow($id)
+    public function getLikes()
     {
-        // array ( $this->arrayPeliculas[$id] );
-        return view('dating.show', array('pelicula' => $pelicula));
-        // return view('dating.show', array( $this->arrayPeliculas[$id] ));
-        //return view('dating.show', [ 'id' => $id ]);
+        $usuario = Auth::user()->id;
+
+        $usuariosMegusta = DB::table('users')
+            ->join('megustas', 'users.id', '=', 'megustas.idUsuarioMeGusta')
+            ->where('megustas.idUsuario', $usuario)->get();
+
+        //
+
+        return view('dating.likes', ['arrayPersona' => $usuariosMegusta]);
     }
 
-    public function getCreate()
+    public function getLikesme()
     {
-        return view('dating.create');
+        $usuario = Auth::user()->id;
+
+        $usuariosLesGusto = DB::table('users')
+            ->join('megustas', 'users.id', '=', 'megustas.idUsuario')
+            ->where('megustas.idUsuarioMeGusta', $usuario)->get();
+
+        return view('dating.likesme', ['arrayPersona' => $usuariosLesGusto]);
     }
 
-    public function getEdit($id)
-    {
-        return view('dating.edit', array('pelicula' => $pelicula));
-    }
-
-    public function postCreate(Request $request)
-    {
-        $postCreateMovie = new Movie;
-        $postCreateMovie->title = $request->input('title');
-        $postCreateMovie->year = $request->input('year');
-        $postCreateMovie->director = $request->input('director');
-        $postCreateMovie->poster = $request->input('poster');
-        $postCreateMovie->synopsis = $request->input('synopsis');
-        $postCreateMovie->save();
-        return redirect('/catalog');
-    }
-
-    public function putEdit(Request $request)
-    {
-        $putEditMovie =  Movie::findOrFail($request->id);
-        $putEditMovie->title = $request->input('title');
-        $putEditMovie->year = $request->input('year');
-        $putEditMovie->director = $request->input('director');
-        $putEditMovie->poster = $request->input('poster');
-        $putEditMovie->synopsis = $request->input('synopsis');
-        $putEditMovie->save();
-        return redirect('/catalog/show/' . $request->id);
+    public function getProfile($id){
+        $usuario = User::findOrFail($id);
+        return view('dating.profile', array('usuario'=>$usuario));
     }
 }

@@ -12,6 +12,7 @@ class ProfileController extends Controller
         $usuario = User::findOrFail($id);
         return view('profile.profile', array('usuario'=>$usuario));
     }
+
     public function putEdit(Request $request){
         $usuarioEditar = User::findOrFail($request->id);
         $usuarioEditar->nombre_apellido = $request->input('nombre_apellido');
