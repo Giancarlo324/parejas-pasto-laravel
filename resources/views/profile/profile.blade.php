@@ -14,11 +14,11 @@ if( Auth::user()->id === $usuario->id ){
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div>
-                    <label>Nombre</label>
-                    <input type="text" placeholder="Escribe tu nombre" name="nombre_apellido" value="{{ $usuario->nombre_apellido }}" require>
+                    <label for="nombre_apellido">Nombre</label>
+                    <input type="text" placeholder="Escribe tu nombre" id="nombre_apellido" name="nombre_apellido" value="{{ $usuario->nombre_apellido }}" require>
 
                     <p>
-                        <label>Sexo</label>
+                        <label for="sexo">Sexo</label>
 
                         <label class="miradio">Hombre
                             <input type="radio" name="sexo" value="M" {{ ($usuario->sexo) == 'M' ? 'checked' : '' }}>
@@ -30,13 +30,13 @@ if( Auth::user()->id === $usuario->id ){
                         </label>
 
                     </p>
-                    <label>Nivel de estudios acadmémicos</label>
-                    <textarea type="text" placeholder="Escribe que estudias actualmente" name="estudios" require>{{ $usuario->estudios }}</textarea>
+                    <label for="estudios">Nivel de estudios acadmémicos</label>
+                    <textarea id="estudios" type="text" placeholder="Escribe que estudias actualmente" name="estudios" require>{{ $usuario->estudios }}</textarea>
 
-                    <label>Sobre ti</label>
-                    <textarea type="text" placeholder="Describe cuales son tus gustos, que buscas, qué haces..." name="sobre_mi" require>{{ $usuario->sobre_mi }}</textarea>
-                    <label>Celular</label>
-                    <input type="tel" maxlength="10" placeholder="Num. Celular" name="celular" value="{{ $usuario->celular }}" require>
+                    <label for="sobre_mi">Sobre ti</label>
+                    <textarea id="sobre_mi" type="text" placeholder="Describe cuales son tus gustos, que buscas, qué haces..." name="sobre_mi" require>{{ $usuario->sobre_mi }}</textarea>
+                    <label for="celular">Celular</label>
+                    <input id="celular" type="tel" maxlength="10" placeholder="Num. Celular" name="celular" value="{{ $usuario->celular }}" require>
                     <p>
                         <label>Me interesa</label>
 
@@ -53,8 +53,8 @@ if( Auth::user()->id === $usuario->id ){
                             <span class="checkmark"></span>
                         </label>
                     </p>
-                    <label>Email(Solo lectura)</label>
-                    <input type="email" name="email" value="{{ $usuario->email }}" readonly>
+                    <label for="email">Email(Solo lectura)</label>
+                    <input id="email" type="email" name="email" value="{{ $usuario->email }}" readonly>
                     
                 </div>
                 <br>

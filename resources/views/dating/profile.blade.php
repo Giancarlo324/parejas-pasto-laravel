@@ -7,9 +7,9 @@
             <h2>Perfil de <strong>{{ $usuario->nombre_apellido }}</strong></h2>
         </header>
         <div class="prueba">
-            <h4>Nombre: </h4>
+            <h4>{{ __('Nombre:') }}</h4>
             <li class="informacion">{{ $usuario->nombre_apellido }}</li>
-            <h4>Celular: </h4>
+            <h4>{{ __('Celular:') }}</h4>
             <li class="informacion">{{ $usuario->celular }}</li>
             <h4>Email: </h4>
             <li class="informacion">{{ $usuario->email }}</li>
