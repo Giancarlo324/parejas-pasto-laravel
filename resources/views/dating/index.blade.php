@@ -14,7 +14,7 @@
 
                     <!-- Feature -->
                     <section>
-                        <img class="responsive_pareja" src="https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg" alt="" />
+                        <img class="responsive_pareja" src=" {{ $arrayPersona->foto2 ? $arrayPersona->foto1 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
                         <header>
                             <h3>Estudios</h3>
                         </header>
@@ -26,7 +26,7 @@
 
                     <!-- Feature -->
                     <section>
-                        <img class="responsive_pareja" src="https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg" alt="" />
+                        <img class="responsive_pareja" src=" {{ $arrayPersona->foto2 ? $arrayPersona->foto2 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
                         <header>
                             <h3>Información...</h3>
                         </header>
@@ -38,7 +38,7 @@
 
                     <!-- Feature -->
                     <section>
-                        <img class="responsive_pareja" src="https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg" alt="" />
+                        <img class="responsive_pareja" src=" {{ $arrayPersona->foto3 ? $arrayPersona->foto3 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
                         <header>
                             <h3>Su edad</h3>
                         </header>
@@ -55,22 +55,20 @@
 
                 </div>
                 <div class="col-12">
-                    <div>
-                        <form action="" method="post" style="display:inline">
-                            {{ csrf_field() }}
-                            <div>
-                                <input type="text" name="like" id="like" value=" {{ $arrayPersona->id }}" readonly style="display:none;">
-                                <button type="submit">Me gusta</button>
-                            </div>
-                        </form>
-                        <form action="" method="post" style="display:inline">
-                            {{ csrf_field() }}
-                            <div>
-                                <input type="text" name="dislike" id="dislike" value=" {{ $arrayPersona->id }}" readonly style="display:none;">
-                                <button type="submit">No me gusta</button>
-                            </div>
-                        </form>
-                    </div>
+                    <form action="" method="post" style="display:inline">
+                        {{ csrf_field() }}
+                        <div>
+                            <input type="text" name="like" id="like" value=" {{ $arrayPersona->id }}" readonly style="display:none;">
+                            <button type="submit">Me gusta</button>
+                        </div>
+                    </form><br>
+                    <form action="" method="post" style="display:inline">
+                        {{ csrf_field() }}
+                        <div>
+                            <input type="text" name="dislike" id="dislike" value=" {{ $arrayPersona->id }}" readonly style="display:none;">
+                            <button type="submit">No me gusta</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

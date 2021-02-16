@@ -7,7 +7,7 @@
             <div class="card-header">{{ __('Registrarse') }}</div>
 
             <div class="card-body">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div>
@@ -57,7 +57,23 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                    </div>
+                    </div><br>
+
+                    <label>Escoge tus 3 mejores fotos (4mb max por foto)</label>
+                    <div>
+                        <input type="file" name="foto1" class="form-control" accept="image/*" require>
+                        @error('foto1')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                        <input type="file" name="foto2" class="form-control" accept="image/*" require>
+                        @error('foto2')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                        <input type="file" name="foto3" class="form-control" accept="image/*" require>
+                        @error('foto3')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div><br>
 
                     <div>
                         <label for="estudios" class="col-md-4 col-form-label text-md-right">{{ __('Nivel académico') }}</label>
@@ -105,11 +121,11 @@
                         <label for="me_interesa" class="col-md-4 col-form-label text-md-right">{{ __('Me interesa') }}</label>
 
                         <div class="col-md-6">
-                            <label class="miradio">{{ __('Mujer') }}
+                            <label class="miradio">{{ __('Hombres') }}
                                 <input class="form-control @error('me_interesa') is-invalid @enderror" id="me_interesa" type="radio" name="me_interesa" value="M" {{ old('me_interesa') == 'M' ? 'checked' : '' }} autocomplete="me_interesa">
                                 <span class="checkmark form-control @error('me_interesa') is-invalid @enderror"></span>
                             </label>
-                            <label class="miradio">{{ __('Mujer') }}
+                            <label class="miradio">{{ __('Mujeres') }}
                                 <input class="form-control @error('me_interesa') is-invalid @enderror" id="me_interesa" type="radio" name="me_interesa" value="F" {{ old('me_interesa') == 'F' ? 'checked' : '' }} autocomplete="me_interesa">
                                 <span class="checkmark form-control @error('me_interesa') is-invalid @enderror"></span>
                             </label>

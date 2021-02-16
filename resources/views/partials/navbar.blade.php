@@ -13,7 +13,7 @@
                 <li><a class="icon solid fa-heart" href="{{ url('/dating') }}"><span>Encontrar pareja</span></a></li>
                 <li><a class="icon solid fa-grin-hearts" href="{{ url('/likes') }}"><span>Mis gustos</span></a></li>
                 <li><a class="icon solid fa-fire" href="{{ url('/likesme') }}"><span>A quien le gusto</span></a></li>
-                <li><a class="icon solid fa-database" href="{{ url('/profile/edit/' . Auth::user()->id ) }}"><span>Actualizar datos</span></a></li>
+                <li><a class="icon solid fa-database" href="{{ url('/profile/edit/' . Auth::user()->id ) }}"><span>Actualizar perfil</span></a></li>
                 <li><form action="{{ url('/logout') }}" method="POST" style="display:inline">
                     {{ csrf_field() }}
                     <button type="submit" class="icon solid fa-sign-out-alt" style="display:inline;cursor:pointer">

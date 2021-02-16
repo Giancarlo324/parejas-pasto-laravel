@@ -10,12 +10,55 @@ if( Auth::user()->id === $usuario->id ){
             <header>
                 <h2>Actualizar mi perfil</h2>
             </header>
-            <form id="formularioModificarPerfil" method="post" enctype="multipart/form-data" action="">
+            <form method="post" enctype="multipart/form-data" action="">
                 {{method_field('PUT')}}
                 {{ csrf_field() }}
                 <div>
                     <label for="nombre_apellido">Nombre</label>
                     <input type="text" placeholder="Escribe tu nombre" id="nombre_apellido" name="nombre_apellido" value="{{ $usuario->nombre_apellido }}" require>
+
+                    <!-- Subir imágenes -->
+                    <label>Fotos max(4mb por foto)</label>
+                    <div class="form-group">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <img class="responsive_pareja" src=" {{ $usuario->foto1 ? $usuario->foto1 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                                    </th>
+                                    <th>
+                                        <img class="responsive_pareja" src=" {{ $usuario->foto2 ? $usuario->foto2 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                                    </th>
+                                    <th>
+                                        <img class="responsive_pareja" src=" {{ $usuario->foto3 ? $usuario->foto3 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="file" name="foto1" class="form-control" accept="image/*">
+                                        @error('imagen1')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </td>
+                                    <td>
+                                        <input type="file" name="foto2" class="form-control" accept="image/*">
+                                        @error('imagen2')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </td>
+                                    <td>
+                                        <input type="file" name="foto3" class="form-control" accept="image/*">
+                                        @error('imagen3')
+                                        <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><br>
+                    <!-- Fin subir imágenes -->
 
                     <p>
                         <label for="sexo">Sexo</label>
@@ -54,8 +97,8 @@ if( Auth::user()->id === $usuario->id ){
                         </label>
                     </p>
                     <label for="email">Email(Solo lectura)</label>
-                    <input id="email" type="email" name="email" value="{{ $usuario->email }}" readonly>
-                    
+                    <input id="email" type="email" name="email" value="{{ $usuario->email }}" require readonly>
+
                 </div>
                 <br>
                 <p>

@@ -6,30 +6,33 @@
 
     <!-- Features -->
     <section id="features">
-        <div class="container">
-            <table class="table">
+        <div class="container">Nombre: {{ $persona->nombre_apellido }}
+            <!-- Muestro las tres imágenes -->
+            <div class="row aln-center">
 
-                <thead style="text-align: center;">
-                    <tr>
-                        <th>Nombre: {{ $persona->nombre_apellido }} </th>
-                    </tr>
-                    <tr>
-                        <td class="responsive_pareja">
-                            <!-- Muestro las tres imágenes -->
-                            <div id="imgPersona">
-                                <img class="responsive_pareja" src="https://i.pinimg.com/originals/92/31/a1/9231a1c4bc5519f04cb79739d2f79374.jpg">
-                            </div>
-                            <!-- Cierre muestra de las tres imágenes -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <ul class="actions">
-                                <li><a href=" {{ url('profile/' . $persona->idUsuarioMeGusta) }}" class="button icon solid fa-file">Ver su perfil</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-            </table>
+                <div class="col-4 col-6-medium col-12-small">
+                    <section>
+                        <img class="responsive_pareja" src=" {{ $persona->foto1 ? $persona->foto1 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                    </section>
+                </div>
+                <div class="col-4 col-6-medium col-12-small">
+                    <section>
+                        <img class="responsive_pareja" src=" {{ $persona->foto2 ? $persona->foto2 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                    </section>
+                </div>
+                <div class="col-4 col-6-medium col-12-small">
+                    <section>
+                        <img class="responsive_pareja" src=" {{ $persona->foto3 ? $persona->foto3 : 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg' }}" alt="" />
+                    </section>
+                </div>
+
+            </div>
+            <!-- Cierre muestra de las tres imágenes -->
+
+            <ul class="actions">
+                <li><a href=" {{ url('profile/' . $persona->idUsuario) }}" class="button icon solid fa-file">Ver su perfil</a></li>
+            </ul>
+
         </div>
     </section>
     @endforeach

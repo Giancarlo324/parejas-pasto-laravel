@@ -30,6 +30,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí",
             "celular" => "3163965498",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "F",
 			"email"=> "roserogiancarlo@gmail.com",
 			"password" => bcrypt("123456789")
@@ -41,6 +44,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco hombre",
             "celular" => "3163965499",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "M",
 			"email"=> "andreapazacosta@gmail.com",
 			"password" => bcrypt("123456789")
@@ -52,6 +58,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco hombre",
             "celular" => "3163965491",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "M",
 			"email"=> "juliadominga@gmail.com",
 			"password" => bcrypt("123456789")
@@ -63,6 +72,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco hombre",
             "celular" => "3163065499",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "M",
 			"email"=> "lacantante@gmail.com",
 			"password" => bcrypt("123456789")
@@ -74,6 +86,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco mujer",
             "celular" => "3110065499",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "F",
 			"email"=> "juanreyes@gmail.com",
 			"password" => bcrypt("123456789")
@@ -85,6 +100,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco mujer",
             "celular" => "3163965415",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "F",
 			"email"=> "francoreyes@gmail.com",
 			"password" => bcrypt("123456789")
@@ -96,6 +114,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco mujer",
             "celular" => "3112865499",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "F",
 			"email"=> "ruthuribe@gmail.com",
 			"password" => bcrypt("123456789")
@@ -107,6 +128,9 @@ class DatabaseSeeder extends Seeder
             "estudios" => "Universidad de Nariño",
             "sobre_mi" => "Estos son datos sobre mí, busco mujer",
             "celular" => "3163912399",
+            "foto1" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto2" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
+            "foto3" => "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg",
             "me_interesa" => "M",
 			"email"=> "normalelizondo@gmail.com",
 			"password" => bcrypt("123456789")
